@@ -11,5 +11,5 @@ import java.util.List;
 public interface MeasurementRepository extends JpaRepository<Measurement, Long> {
 
     @Override
-    List<Measurement> findAllById(List<Long> ids);
+    List<Measurement> findAllById(Iterable<Long> longs);
 }
