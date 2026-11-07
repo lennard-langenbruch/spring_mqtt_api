@@ -16,6 +16,7 @@ public class Measurement extends BaseEntity {
         this.humidity = humidity;
         this.estimatedBatteryCharge = battery;
         this.location = location;
+
     }
 
     private Float temperature;

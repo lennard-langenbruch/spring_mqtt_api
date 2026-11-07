@@ -6,9 +6,15 @@ import org.hibernate.annotations.Audited;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @MappedSuperclass
 @Audited
 public abstract class BaseEntity implements Serializable {
+
+    // Inherit Logger Stream
+    protected final Logger log = LoggerFactory.getLogger(getClass());
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,10 +29,12 @@ public abstract class BaseEntity implements Serializable {
     @PrePersist
     public void prePersist() {
         createdAt = LocalDateTime.now();
+        log.info("Persisting entity: {}", this);
     }
 
     @PreUpdate
     public void preUpdate() {
         updatedAt = LocalDateTime.now();
+        log.info("Updating entity: {}", this);
     }
 }
