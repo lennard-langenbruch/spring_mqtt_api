@@ -3,13 +3,11 @@ package de.example.api;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.util.*;
 
 @SpringBootApplication
-public class SpringTemplateApiApplication {
-	public void main() {
-		SpringApplication.run(SpringTemplateApiApplication.class);
+    public class SpringTemplateApiApplication {
 
-
-	}
+        static void main(String[] args) {
+            SpringApplication.run(SpringTemplateApiApplication.class, args);
+        }
 }

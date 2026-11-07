@@ -18,7 +18,7 @@
     <version>0.0.1-SNAPSHOT</version>
 
     <name>spring_template_api</name>
-    <description>Spring Boot JPA H2 Template</description>
+    <description>Spring Boot JPA SQLite Template</description>
 
     <properties>
         <java.version>25</java.version>
@@ -27,17 +27,30 @@
 
     <dependencies>
 
+        <!-- Spring Web -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
         <!-- Spring Data JPA -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
-        <!-- H2 Database -->
+        <!-- SQLite JDBC driver -->
         <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
+            <groupId>org.xerial</groupId>
+            <artifactId>sqlite-jdbc</artifactId>
+            <version>3.50.3.0</version>
             <scope>runtime</scope>
+        </dependency>
+
+        <!-- SQLite dialect for Hibernate -->
+        <dependency>
+            <groupId>org.hibernate.orm</groupId>
+            <artifactId>hibernate-community-dialects</artifactId>
         </dependency>
 
         <!-- Testing -->
@@ -54,6 +67,15 @@
             <version>4.52.0</version>
             <scope>compile</scope>
         </dependency>
+
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.48</version>
+            <scope>provided</scope>
+        </dependency>
+
 
         <dependency>
             <groupId>org.junit.jupiter</groupId>
